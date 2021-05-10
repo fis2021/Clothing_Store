@@ -1,18 +1,15 @@
 package sample;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 
 
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-       // Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
+        // Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
         primaryStage.setTitle("Clothing Store");
-       // primaryStage.setScene(new Scene(root, 300, 275));
+        // primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
     }
 

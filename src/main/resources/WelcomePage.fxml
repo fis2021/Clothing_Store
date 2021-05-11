@@ -17,8 +17,8 @@
                   <Image url="@../../../Images/pngfind.com-lock-icon-png-1130428.png" />
                </image>
             </ImageView>
-            <Button fx:id="loginButton" layoutX="90.0" layoutY="191.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="133.0" style="-fx-background-color: #d2a679#d2a679;" text="Login" />
-            <Button fx:id="registerButton" layoutX="90.0" layoutY="234.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="132.0" style="-fx-background-color: #d2a679#d2a679;" text="Register" />
+            <Button fx:id="loginButton" layoutX="90.0" layoutY="191.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="26.0" prefWidth="133.0" style="-fx-background-color: #d2a679#d2a679;" text="Login" />
+            <Button fx:id="registerButton" layoutX="90.0" layoutY="234.0" mnemonicParsing="false" onAction="#registerButtonOnAction" prefHeight="26.0" prefWidth="132.0" style="-fx-background-color: #d2a679#d2a679;" text="Register" />
             <Button fx:id="cancelButton" layoutX="43.0" layoutY="300.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="26.0" prefWidth="226.0" style="-fx-background-color: #bf8040#bf8040;" text="Cancel" />
             <Text layoutX="127.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I want to.." wrappingWidth="134.2060546875">
                <font>

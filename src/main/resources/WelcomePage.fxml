@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="358.0" prefWidth="600.0" style="-fx-background-color: #ecd9c6 #ecd9c6;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.WelcomePageController">
+   <right>
+      <AnchorPane prefHeight="351.0" prefWidth="313.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="lockImage" fitHeight="48.0" fitWidth="59.0" layoutX="138.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/pngfind.com-lock-icon-png-1130428.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="loginButton" layoutX="90.0" layoutY="191.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="133.0" style="-fx-background-color: #d2a679#d2a679;" text="Login" />
+            <Button fx:id="registerButton" layoutX="90.0" layoutY="234.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="132.0" style="-fx-background-color: #d2a679#d2a679;" text="Register" />
+            <Button fx:id="cancelButton" layoutX="43.0" layoutY="300.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="26.0" prefWidth="226.0" style="-fx-background-color: #bf8040#bf8040;" text="Cancel" />
+            <Text layoutX="127.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I want to.." wrappingWidth="134.2060546875">
+               <font>
+                  <Font name="Charter Roman" size="14.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="62.0" fitWidth="195.0" layoutX="74.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/welcome.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </right>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #dfbf9f#dfbf9f;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="clothesImage" fitHeight="360.0" fitWidth="294.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/original.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

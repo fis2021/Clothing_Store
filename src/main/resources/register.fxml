@@ -18,7 +18,7 @@
          <children>
             <ImageView fitHeight="75.0" fitWidth="200.0" layoutX="19.0" layoutY="163.0">
                <image>
-                  <Image url="@../../../Images/welcome.png" />
+                  <Image url="@Images/welcome.png" />
                </image>
             </ImageView>
             <Button fx:id="backButton" layoutY="-1.0" mnemonicParsing="false" onAction="#setBackButton" style="-fx-background-color: #cc9966#cc9966 #cc9966#cc9966;" text="Back" />

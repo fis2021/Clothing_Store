@@ -16,7 +16,7 @@
             <children>
                 <ImageView fitHeight="387.0" fitWidth="282.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../../../Images/original.jpg" />
+                        <Image url="@Images/original.jpg" />
                     </image>
                 </ImageView>
             <Button fx:id="backButton" layoutY="1.0" mnemonicParsing="false" onAction="#setBackButton" prefHeight="26.0" prefWidth="40.0" style="-fx-background-color: #cc9966#cc9966 #cc9966#cc9966;" text="Back">

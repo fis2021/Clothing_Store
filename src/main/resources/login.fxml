@@ -19,15 +19,15 @@
                         <Image url="@../../../Images/original.jpg" />
                     </image>
                 </ImageView>
-                <Button fx:id="backButton" layoutY="1.0" mnemonicParsing="false" onAction="#setBackButton" prefHeight="26.0" prefWidth="40.0" style="-fx-background-color: #cc9966#cc9966 #cc9966#cc9966;" text="Back">
-                    <font>
-                        <Font size="10.0" />
-                    </font>
-                </Button>
+            <Button fx:id="backButton" layoutY="1.0" mnemonicParsing="false" onAction="#setBackButton" prefHeight="26.0" prefWidth="40.0" style="-fx-background-color: #cc9966#cc9966 #cc9966#cc9966;" text="Back">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
             </children>
         </AnchorPane>
     </left>
-    <center>
+   <right>
         <AnchorPane prefHeight="384.0" prefWidth="308.0" style="-fx-background-color: #ffe6cc#ffe6cc;" BorderPane.alignment="CENTER">
             <children>
                 <ImageView fitHeight="32.0" fitWidth="46.0" layoutX="156.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
@@ -43,5 +43,5 @@
                 <Button fx:id="cancelButton" layoutX="47.0" layoutY="301.0" mnemonicParsing="false" onAction="#setCancelButton" prefHeight="25.0" prefWidth="163.0" style="-fx-background-color: #cc9966#cc9966 #cc9966#cc9966;" text="Cancel" />
             </children>
         </AnchorPane>
-    </center>
+   </right>
 </BorderPane>

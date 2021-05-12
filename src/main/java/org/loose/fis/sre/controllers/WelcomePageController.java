@@ -43,7 +43,7 @@ public class WelcomePageController {
     public void registerButtonOnAction(ActionEvent event) throws IOException {
         Stage stageRegister=(Stage) registerButton.getScene().getWindow();
         stageRegister.setTitle("REGISTER");
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("register.fxml"));
         stageRegister.setScene(new Scene(root, 600, 350));
         stageRegister.show();
     }

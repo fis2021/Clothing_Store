@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
@@ -9,7 +10,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="321.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="358.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.AddProductController">
    <left>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
@@ -21,7 +22,7 @@
          </children></AnchorPane>
    </left>
    <center>
-      <AnchorPane prefHeight="411.0" prefWidth="368.0" style="-fx-background-color: #dfbf9f#dfbf9f;" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="finishButton" prefHeight="411.0" prefWidth="368.0" style="-fx-background-color: #dfbf9f#dfbf9f;" BorderPane.alignment="CENTER">
          <children>
             <TextField fx:id="productNameField" layoutX="157.0" layoutY="81.0" />
             <TextField fx:id="prDescriptionField" layoutX="157.0" layoutY="115.0" />
@@ -38,6 +39,7 @@
             <Text layoutX="23.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Product Description" />
             <TextField fx:id="priceField" layoutX="157.0" layoutY="151.0" />
             <Text layoutX="63.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price( $ )" />
+            <Button layoutX="126.0" layoutY="268.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="123.0" style="-fx-background-color: #d2a679#d2a679;" text="FINISH" />
          </children>
       </AnchorPane>
    </center>

@@ -72,8 +72,10 @@ public class User {
     private String secondname;
     private String phonenumber;
     private String address;
+    private String email;
     private String role;
-    public User(String username, String password,String passwordconfirm, String firstname,String secondname,String phonenumber,String address,String role) {
+
+    public User(String username, String password,String passwordconfirm, String firstname,String secondname,String phonenumber,String address,String email,String role) {
         this.username = username;
         this.password = password;
         this.passwordconfirm = passwordconfirm;
@@ -81,6 +83,7 @@ public class User {
         this.secondname = secondname;
         this.phonenumber = phonenumber;
         this.address = address;
+        this.email = email;
         this.role = role;
     }
 
@@ -139,6 +142,14 @@ public class User {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getRole(){return role;}

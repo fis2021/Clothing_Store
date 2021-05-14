@@ -21,7 +21,7 @@
                   <Image url="@Images/welcome.png" />
                </image>
             </ImageView>
-            <Text fx:id="registrationMessage" fill="#e46156" layoutX="14.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="208.3830909729004">
+            <Text fx:id="registrationMessage" fill="#e46156" layoutX="14.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="207.3830909729004">
                <font>
                   <Font name="Bodoni MT Bold Italic" size="12.0" />
                </font>
@@ -32,28 +32,35 @@
    <center>
       <AnchorPane prefHeight="400.0" prefWidth="374.0" style="-fx-background-color: #ffe6cc#ffe6cc;" BorderPane.alignment="CENTER">
          <children>
-            <Text layoutX="29.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name" wrappingWidth="78.13671875" />
-            <TextField fx:id="firstnameField" layoutX="109.0" layoutY="69.0" prefHeight="26.0" prefWidth="159.0" style="-fx-background-color: white;" />
-            <Text layoutX="68.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter your credentials:" wrappingWidth="227.60934448242188">
+            <Text layoutX="28.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name" wrappingWidth="78.13671875" />
+            <TextField fx:id="firstnameField" layoutX="109.0" layoutY="46.0" prefHeight="26.0" prefWidth="159.0" style="-fx-background-color: white;" />
+            <Text layoutX="67.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter your credentials:" wrappingWidth="227.60934448242188">
                <font>
                   <Font name="Book Antiqua" size="17.0" />
                </font>
             </Text>
-            <Text layoutX="29.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name" wrappingWidth="78.13671875" />
-            <TextField fx:id="secondnameField" layoutX="109.0" layoutY="109.0" prefHeight="26.0" prefWidth="159.0" style="-fx-background-color: white;" />
-            <Text layoutX="39.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" wrappingWidth="56.33673095703125" />
-            <Text layoutX="28.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" wrappingWidth="78.13671875" />
-            <TextField fx:id="addressField" layoutX="109.0" layoutY="152.0" prefHeight="26.0" prefWidth="159.0" style="-fx-background-color: white;" />
-            <Text layoutX="43.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone" wrappingWidth="78.13671875" />
-            <TextField fx:id="phonenumberField" layoutX="109.0" layoutY="191.0" prefHeight="26.0" prefWidth="159.0" style="-fx-background-color: white;" />
-            <Button fx:id="registerbut" layoutX="273.0" layoutY="348.0" mnemonicParsing="false" onAction="#handleRegisterAction" style="-fx-background-color: #cc9966#cc9966 #cc9966#cc9966;" text="REGISTER" />
-            <Text layoutX="19.0" layoutY="367.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Account Type:" wrappingWidth="96.13671875" />
-            <Text layoutX="29.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" wrappingWidth="78.13671875" />
-            <TextField fx:id="usernameField" layoutX="109.0" layoutY="227.0" prefHeight="26.0" prefWidth="159.0" style="-fx-background-color: white;" />
-            <ChoiceBox fx:id="role" layoutX="106.0" layoutY="349.0" prefWidth="150.0" />
-            <PasswordField fx:id="passwordField" layoutX="113.0" layoutY="261.0" style="-fx-background-color: white;" />
-            <Text layoutX="4.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password Confirm" wrappingWidth="126.93669891357422" />
-            <PasswordField fx:id="passwordconfirmField" layoutX="121.0" layoutY="299.0" style="-fx-background-color: white;" />
+            <Text layoutX="28.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name" wrappingWidth="78.13671875" />
+            <TextField fx:id="secondnameField" layoutX="109.0" layoutY="74.0" prefHeight="26.0" prefWidth="159.0" style="-fx-background-color: white;" />
+            <Text layoutX="39.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" wrappingWidth="56.33673095703125" />
+            <Text layoutX="38.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" wrappingWidth="78.13671875" />
+            <TextField fx:id="addressField" layoutX="109.0" layoutY="102.0" prefHeight="26.0" prefWidth="159.0" style="-fx-background-color: white;" />
+            <Text layoutX="38.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone" wrappingWidth="59.13671875" />
+            <TextField fx:id="phonenumberField" layoutX="109.0" layoutY="131.0" prefHeight="24.0" prefWidth="159.0" style="-fx-background-color: white;" />
+            <Button fx:id="registerbut" layoutX="258.0" layoutY="348.0" mnemonicParsing="false" onAction="#handleRegisterAction" style="-fx-background-color: #cc9966#cc9966 #cc9966#cc9966;" text="REGISTER" />
+            <Text layoutX="18.0" layoutY="334.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Account Type:" wrappingWidth="96.13671875" />
+            <Text layoutX="38.0" layoutY="234.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UserName" wrappingWidth="78.13671875" />
+            <TextField fx:id="usernameField" layoutX="124.0" layoutY="216.0" prefHeight="26.0" prefWidth="159.0" style="-fx-background-color: white;" />
+            <ChoiceBox fx:id="role" layoutX="52.0" layoutY="350.0" prefHeight="26.0" prefWidth="128.0" />
+            <PasswordField fx:id="passwordField" layoutX="127.0" layoutY="248.0" style="-fx-background-color: white;" />
+            <Text layoutX="14.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password Confirm" wrappingWidth="126.93669891357422" />
+            <PasswordField fx:id="passwordconfirmField" layoutX="127.0" layoutY="278.0" style="-fx-background-color: white;" />
+            <Text layoutX="37.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="59.13671875" />
+            <TextField fx:id="emailField" layoutX="109.0" layoutY="160.0" prefHeight="24.0" prefWidth="159.0" style="-fx-background-color: white;" />
+            <Text fill="#830000" layoutX="20.0" layoutY="278.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(At least 6 characters)">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Text>
          </children>
       </AnchorPane>
    </center>

@@ -33,12 +33,12 @@ public class UserService {
     }*/
 
     public static void addUser(String username, String password, String passwordconfirm, String firstname,
-                               String secondname, String phonenumber, String address,String role)  throws UsernameAlreadyExistsException, FieldNotCompletedException,PasswordConfirmationException,WeakPasswordException {
+                               String secondname, String phonenumber, String address,String email,String role)  throws UsernameAlreadyExistsException, FieldNotCompletedException,PasswordConfirmationException,WeakPasswordException {
         UserDoesNotAlreadyExist(username);
         FieldsCompleted(username, password, firstname, passwordconfirm, secondname,phonenumber,address);
         PasswordformatException(password);
         PasswordsMach(password, passwordconfirm);
-        userRepository.insert(new User(username, encodePassword(username, password),encodePassword(username, passwordconfirm), firstname, secondname, phonenumber, address,role));
+        userRepository.insert(new User(username, encodePassword(username, password),encodePassword(username, passwordconfirm), firstname, secondname, phonenumber, email, address,role));
     }
 
     private static void UserDoesNotAlreadyExist(String username) throws UsernameAlreadyExistsException {

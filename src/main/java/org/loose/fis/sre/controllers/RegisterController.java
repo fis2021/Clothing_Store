@@ -68,6 +68,8 @@ public class RegisterController {
     TextField phonenumberField;
     @FXML
     TextField addressField;
+    @FXML
+    TextField emailField;
    // @FXML
     //public File file;
     //@FXML
@@ -88,7 +90,7 @@ public class RegisterController {
         try {
             UserService.addUser(usernameField.getText(), passwordField.getText(), passwordconfirmField.getText(),
                     firstnameField.getText(), secondnameField.getText(), phonenumberField.getText(),
-                    addressField.getText(),(String) role.getValue());
+                    addressField.getText(),emailField.getText(),(String) role.getValue());
             //registrationMessage.setText("Account created!");
             usernameField.clear();
             passwordField.clear();

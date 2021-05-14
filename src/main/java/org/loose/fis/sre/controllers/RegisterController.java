@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 import org.loose.fis.sre.exceptions.FieldNotCompletedException;
 import org.loose.fis.sre.exceptions.PasswordConfirmationException;
 import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
+import org.loose.fis.sre.exceptions.WeakPasswordException;
 import org.loose.fis.sre.services.UserService;
 
 import java.io.IOException;
@@ -122,10 +123,14 @@ public class RegisterController {
             passwordconfirmField.clear();
 
             }
+        catch (WeakPasswordException e) {
+            registrationMessage.setText(e.getMessage());
+            passwordField.clear();
+            passwordconfirmField.clear();
 
 
 
-    }
+            }
 //fx:controller="org.loose.fis.sre.controllers.RegisterController"
 
-}
+}}

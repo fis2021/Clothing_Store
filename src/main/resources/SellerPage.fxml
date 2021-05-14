@@ -27,7 +27,7 @@
          <children>
             <Button fx:id="addProductButton" layoutX="108.0" layoutY="94.0" mnemonicParsing="false" onAction="#setAddProductButton" prefHeight="36.0" prefWidth="109.0" style="-fx-background-color: #cc9966 #cc9966;" text="Add Product" />
             <Button fx:id="myProductsButton" layoutX="110.0" layoutY="145.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="109.0" style="-fx-background-color: #cc9966 #cc9966;" text="My Products" />
-            <Button fx:id="inboxButton" layoutX="110.0" layoutY="195.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="108.0" style="-fx-background-color: #cc9966 #cc9966;" text="Inbox" />
+            <Button fx:id="inboxButton" layoutX="110.0" layoutY="195.0" mnemonicParsing="false" onAction="#setInboxButton" prefHeight="33.0" prefWidth="108.0" style="-fx-background-color: #cc9966 #cc9966;" text="Inbox" />
 
             <Button fx:id="cancelButton" layoutX="51.0" layoutY="315.0" mnemonicParsing="false" onAction="#setCancelButton" prefHeight="26.0" prefWidth="229.0" style="-fx-background-color: #cc9966 #cc9966;" text="Cancel" />
          </children>

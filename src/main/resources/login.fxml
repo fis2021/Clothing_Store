@@ -32,14 +32,18 @@
             <children>
                 <ImageView fitHeight="32.0" fitWidth="46.0" layoutX="156.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@Images/pngfind.com-lock-icon-png-1130428.png" />
+
+                        <Image url="@Images/lock.png" />
+
+                    
+
                     </image>
                 </ImageView>
                 <Label layoutX="14.0" layoutY="117.0" text="Username" />
                 <TextField fx:id="usernameField" layoutX="94.0" layoutY="113.0" prefHeight="26.0" prefWidth="150.0" />
                 <Label layoutX="15.0" layoutY="159.0" text="Password" />
                 <PasswordField fx:id="passwordField" layoutX="94.0" layoutY="154.0" prefHeight="26.0" prefWidth="152.0" />
-                <Button fx:id="loginButton" layoutX="67.0" layoutY="207.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="123.0" style="-fx-background-color: #cc9966#cc9966;" text="Login" textFill="#120f0f" />
+                <Button fx:id="loginButton" layoutX="67.0" layoutY="207.0" mnemonicParsing="false" onAction="#setLoginButton" prefHeight="32.0" prefWidth="123.0" style="-fx-background-color: #cc9966#cc9966;" text="Login" textFill="#120f0f" />
                 <Button fx:id="cancelButton" layoutX="47.0" layoutY="301.0" mnemonicParsing="false" onAction="#setCancelButton" prefHeight="25.0" prefWidth="163.0" style="-fx-background-color: #cc9966#cc9966 #cc9966#cc9966;" text="Cancel" />
             </children>
         </AnchorPane>

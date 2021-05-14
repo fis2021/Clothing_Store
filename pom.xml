@@ -8,7 +8,8 @@
     <artifactId>simple-registration-example</artifactId>
     <version>0.1.0-SNAPSHOT</version>
 
-    <properties>
+
+<properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <main.class.name>org.loose.fis.sre.Main</main.class.name>
         <final.jar.name>simple-registration-example</final.jar.name>

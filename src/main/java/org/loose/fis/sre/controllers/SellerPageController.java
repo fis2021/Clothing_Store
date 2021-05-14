@@ -14,6 +14,7 @@ public class SellerPageController {
     public Button backButton;
     public Button inboxButton;
     public Button addProductButton;
+    public Button myProductsButton;
 
     public void setCancelButton(ActionEvent event) {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
@@ -23,6 +24,13 @@ public class SellerPageController {
         Stage stageBack = (Stage) backButton.getScene().getWindow();
         stageBack.setTitle("Welcome!");
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("WelcomePage.fxml"));
+        stageBack.setScene(new Scene(root, 600, 350));
+        stageBack.show();
+    }
+    public void setMyProductsButton(ActionEvent event) throws IOException {
+        Stage stageBack = (Stage) myProductsButton.getScene().getWindow();
+        stageBack.setTitle("Welcome!");
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("MyProducts.fxml"));
         stageBack.setScene(new Scene(root, 600, 350));
         stageBack.show();
     }

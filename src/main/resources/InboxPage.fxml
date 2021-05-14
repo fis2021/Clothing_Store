@@ -9,7 +9,7 @@
    <left>
 
        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
-
+      <Button fx:id="backButton" layoutY="-1.0" mnemonicParsing="false" onAction="#setBackButton" style="-fx-background-color: #cc9966#cc9966 #cc9966#cc9966;" text="Back" />
    </left>
    <right>
       <AnchorPane prefHeight="400.0" prefWidth="444.0" BorderPane.alignment="CENTER" />

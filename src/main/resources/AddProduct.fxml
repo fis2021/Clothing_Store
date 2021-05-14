@@ -14,7 +14,9 @@
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
             <ImageView fx:id="photoPath" fitHeight="190.0" fitWidth="200.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true" />
-            <Button fx:id="attachImageButton" layoutX="34.0" layoutY="304.0" mnemonicParsing="false" onAction="#addPictureOnAction" prefHeight="31.0" prefWidth="133.0" style="-fx-background-color: #d2a679#d2a679 #d2a679#d2a679;" text="Attach Image" />
+             <Button fx:id="backButton" layoutY="-1.0" mnemonicParsing="false" onAction="#setBackButton" style="-fx-background-color: #cc9966#cc9966 #cc9966#cc9966;" text="Back" />
+
+             <Button fx:id="attachImageButton" layoutX="34.0" layoutY="304.0" mnemonicParsing="false" onAction="#addPictureOnAction" prefHeight="31.0" prefWidth="133.0" style="-fx-background-color: #d2a679#d2a679 #d2a679#d2a679;" text="Attach Image" />
          </children></AnchorPane>
    </left>
    <center>

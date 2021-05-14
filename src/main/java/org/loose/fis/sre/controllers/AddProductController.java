@@ -18,6 +18,8 @@ public class AddProductController {
     ImageView photoPath;
     @FXML
     public Button finishButton;
+    @FXML
+    public Button backButton;
     public File file;
     public String path;
     public void addPictureOnAction() throws MalformedURLException{
@@ -39,6 +41,13 @@ public class AddProductController {
         Stage stageBack = (Stage) finishButton.getScene().getWindow();
         stageBack.setTitle("My Products");
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("MyProducts.fxml"));
+        stageBack.setScene(new Scene(root, 600, 350));
+        stageBack.show();
+    }
+    public void setBackButton(ActionEvent event) throws IOException {
+        Stage stageBack = (Stage) backButton.getScene().getWindow();
+        stageBack.setTitle("Welcome!");
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("SellerPage.fxml"));
         stageBack.setScene(new Scene(root, 600, 350));
         stageBack.show();
     }

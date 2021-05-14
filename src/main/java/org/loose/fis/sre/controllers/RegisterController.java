@@ -29,29 +29,6 @@ public class RegisterController {
         stageBack.setScene(new Scene(root, 600, 350));
         stageBack.show();
     }
-    /*@FXML
-    private String registrationMessage="Account created";
-    @FXML
-    private PasswordField passwordField;
-    @FXML
-    private TextField usernameField;
-    @FXML
-    private ChoiceBox role;
-
-
-    public void initialize() {
-        role.getItems().addAll("Seller", "Buyer");
-    }
-
-
-    public void handleRegisterAction() {
-        try {
-            UserService.addUser(usernameField.getText(), passwordField.getText(), (String) role.getValue());
-            System.out.println(registrationMessage);
-        } catch (UsernameAlreadyExistsException e) {
-            System.out.println("Try again");
-        }
-    }*/
    @FXML
     private Text registrationMessage = null;
     @FXML
@@ -70,17 +47,9 @@ public class RegisterController {
     TextField addressField;
     @FXML
     TextField emailField;
-   // @FXML
-    //public File file;
-    //@FXML
-   // public String path ;
     @FXML
    ChoiceBox role;
 
-    @FXML
-   /* public void initialize() {
-        this.role.getItems().addAll(new Object[]{"Seller", "Buyer"});
-    }*/
     public void initialize() {
         role.getItems().addAll("Seller", "Buyer");
     }
@@ -91,7 +60,6 @@ public class RegisterController {
             UserService.addUser(usernameField.getText(), passwordField.getText(), passwordconfirmField.getText(),
                     firstnameField.getText(), secondnameField.getText(), phonenumberField.getText(),
                     addressField.getText(),emailField.getText(),(String) role.getValue());
-            //registrationMessage.setText("Account created!");
             usernameField.clear();
             passwordField.clear();
             passwordconfirmField.clear();

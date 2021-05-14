@@ -2,6 +2,7 @@ package org.loose.fis.sre.services;
 
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
+import org.loose.fis.sre.exceptions.FieldNotCompletedException;
 import org.loose.fis.sre.exceptions.PasswordConfirmationException;
 import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
 import org.loose.fis.sre.model.User;
@@ -31,9 +32,9 @@ public class UserService {
     }*/
 
     public static void addUser(String username, String password, String passwordconfirm, String firstname,
-                               String secondname, String phonenumber, String address,String role)  throws UsernameAlreadyExistsException, PasswordConfirmationException {
+                               String secondname, String phonenumber, String address,String role)  throws UsernameAlreadyExistsException, FieldNotCompletedException,PasswordConfirmationException {
         checkUserDoesNotAlreadyExist(username);
-        //checkAllFieldCompleted(username, password, firstname, passwordconfirm, secondname,phonenumber);
+        checkFieldsCompleted(username, password, firstname, passwordconfirm, secondname,phonenumber,address);
         //checkPasswordformatException(password);
         checkPasswordsMach(password, passwordconfirm);
         userRepository.insert(new User(username, encodePassword(username, password),encodePassword(username, passwordconfirm), firstname, secondname, phonenumber, address,role));
@@ -50,6 +51,7 @@ public class UserService {
             throw new PasswordConfirmationException();
         }
     }
+
     private static String encodePassword(String salt, String password) {
         MessageDigest md = getMessageDigest();
         md.update(salt.getBytes(StandardCharsets.UTF_8));
@@ -69,6 +71,16 @@ public class UserService {
             throw new IllegalStateException("SHA-512 does not exist!");
         }
         return md;
+
+
+    }
+
+    public static void checkFieldsCompleted(String username, String password, String firstname,String secondname, String passwordconfirm
+                                              , String phonenumber,String address) throws FieldNotCompletedException {
+        if (username.trim().isEmpty() || password.trim().isEmpty()|| firstname.trim().isEmpty() || secondname.trim().isEmpty() ||
+                passwordconfirm.trim().isEmpty()|| phonenumber.trim().isEmpty() || address.trim().isEmpty()) {
+            throw new FieldNotCompletedException();
+        }
     }
 
 

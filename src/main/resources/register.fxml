@@ -21,11 +21,16 @@
                   <Image url="@Images/welcome.png" />
                </image>
             </ImageView>
+            <Text fx:id="registrationMessage" fill="#e46156" layoutX="14.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="208.3830909729004">
+               <font>
+                  <Font name="Bodoni MT Bold Italic" size="12.0" />
+               </font>
+            </Text>
          </children>
       </AnchorPane>
    </left>
    <center>
-      <AnchorPane fx:id="Email" prefHeight="400.0" prefWidth="374.0" style="-fx-background-color: #ffe6cc#ffe6cc;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="400.0" prefWidth="374.0" style="-fx-background-color: #ffe6cc#ffe6cc;" BorderPane.alignment="CENTER">
          <children>
             <Text layoutX="29.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name" wrappingWidth="78.13671875" />
             <TextField fx:id="firstnameField" layoutX="109.0" layoutY="69.0" prefHeight="26.0" prefWidth="159.0" style="-fx-background-color: white;" />
@@ -42,7 +47,7 @@
             <Text layoutX="43.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone" wrappingWidth="78.13671875" />
             <TextField fx:id="phonenumberField" layoutX="109.0" layoutY="191.0" prefHeight="26.0" prefWidth="159.0" style="-fx-background-color: white;" />
             <Button fx:id="registerbut" layoutX="273.0" layoutY="348.0" mnemonicParsing="false" onAction="#handleRegisterAction" style="-fx-background-color: #cc9966#cc9966 #cc9966#cc9966;" text="REGISTER" />
-            <Text fx:id="acctypetext" layoutX="19.0" layoutY="367.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Account Type:" wrappingWidth="96.13671875" />
+            <Text layoutX="19.0" layoutY="367.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Account Type:" wrappingWidth="96.13671875" />
             <Text layoutX="29.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" wrappingWidth="78.13671875" />
             <TextField fx:id="usernameField" layoutX="109.0" layoutY="227.0" prefHeight="26.0" prefWidth="159.0" style="-fx-background-color: white;" />
             <ChoiceBox fx:id="role" layoutX="106.0" layoutY="349.0" prefWidth="150.0" />

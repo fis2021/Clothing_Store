@@ -10,7 +10,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import org.loose.fis.sre.exceptions.FieldNotCompletedException;
 import org.loose.fis.sre.exceptions.PasswordConfirmationException;
 import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
 import org.loose.fis.sre.services.UserService;
@@ -49,8 +51,8 @@ public class RegisterController {
             System.out.println("Try again");
         }
     }*/
-   // @FXML
-    //private Text registrationMessage = null;
+   @FXML
+    private Text registrationMessage = null;
     @FXML
     private PasswordField passwordField;
     @FXML
@@ -67,14 +69,17 @@ public class RegisterController {
     TextField addressField;
    // @FXML
     //public File file;
-    @FXML
-    public String path ;
+    //@FXML
+   // public String path ;
     @FXML
    ChoiceBox role;
 
     @FXML
-    public void initialize() {
+   /* public void initialize() {
         this.role.getItems().addAll(new Object[]{"Seller", "Buyer"});
+    }*/
+    public void initialize() {
+        role.getItems().addAll("Seller", "Buyer");
     }
 
     @FXML
@@ -83,7 +88,7 @@ public class RegisterController {
             UserService.addUser(usernameField.getText(), passwordField.getText(), passwordconfirmField.getText(),
                     firstnameField.getText(), secondnameField.getText(), phonenumberField.getText(),
                     addressField.getText(),(String) role.getValue());
-           // registrationMessage.setText("Account created successfully!");
+            //registrationMessage.setText("Account created!");
             usernameField.clear();
             passwordField.clear();
             passwordconfirmField.clear();
@@ -102,26 +107,23 @@ public class RegisterController {
                 window.show();
             }
         } catch (UsernameAlreadyExistsException e) {
-            //registrationMessage.setText(e.getMessage());
+            registrationMessage.setText(e.getMessage());
             passwordField.clear();
             passwordconfirmField.clear();
 
-        }/*catch (FieldNotCompletedException e) {
-            //registrationMessage.setText(e.getMessage());
+        }catch (FieldNotCompletedException e) {
+            registrationMessage.setText(e.getMessage());
             passwordField.clear();
             passwordconfirmField.clear();
-
-        }catch (WeakPasswordException e) {
-            //registrationMessage.setText(e.getMessage());
-            passwordField.clear();
-            passwordconfirmField.clear();
-*/
-        catch (PasswordConfirmationException e) {
-            //registrationMessage.setText(e.getMessage());
-            passwordField.clear();
-            passwordconfirmField.clear();
-
         }
+        catch (PasswordConfirmationException e) {
+            registrationMessage.setText(e.getMessage());
+            passwordField.clear();
+            passwordconfirmField.clear();
+
+            }
+
+
 
     }
 //fx:controller="org.loose.fis.sre.controllers.RegisterController"

@@ -12,17 +12,24 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <main.class.name>org.loose.fis.sre.Main</main.class.name>
         <final.jar.name>simple-registration-example</final.jar.name>
-    </properties>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <main.class.name>Main</main.class.name>
-        <final.jar.name>Main</final.jar.name>
         <maven.compiler.source>15</maven.compiler.source>
         <maven.compiler.target>15</maven.compiler.target>
+
     </properties>
 
     <dependencies>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.30</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.30</version>
+        </dependency>
+
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>

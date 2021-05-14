@@ -14,7 +14,7 @@
          <children>
             <ImageView fx:id="lockImage" fitHeight="48.0" fitWidth="59.0" layoutX="138.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../Images/pngfind.com-lock-icon-png-1130428.png" />
+                  <Image url="@Images/pngfind.com-lock-icon-png-1130428.png" />
                </image>
             </ImageView>
             <Button fx:id="loginButton" layoutX="90.0" layoutY="191.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="26.0" prefWidth="133.0" style="-fx-background-color: #d2a679#d2a679;" text="Login" />
@@ -27,7 +27,7 @@
             </Text>
             <ImageView fitHeight="62.0" fitWidth="195.0" layoutX="74.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../Images/welcome.png" />
+                  <Image url="@Images/welcome.png" />
                </image>
             </ImageView>
          </children>
@@ -38,7 +38,7 @@
          <children>
             <ImageView fx:id="clothesImage" fitHeight="360.0" fitWidth="294.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../Images/original.jpg" />
+                  <Image url="@Images/original.jpg" />
                </image>
             </ImageView>
          </children>

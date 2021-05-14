@@ -2,6 +2,7 @@ package org.loose.fis.sre.services;
 
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
+import org.loose.fis.sre.exceptions.PasswordConfirmationException;
 import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
 import org.loose.fis.sre.model.User;
 
@@ -24,9 +25,18 @@ public class UserService {
         userRepository = database.getRepository(User.class);
     }
 
-    public static void addUser(String username, String password, String role) throws UsernameAlreadyExistsException {
+   /* public static void addUser(String username, String password, String role) throws UsernameAlreadyExistsException {
         checkUserDoesNotAlreadyExist(username);
         userRepository.insert(new User(username, encodePassword(username, password), role));
+    }*/
+
+    public static void addUser(String username, String password, String passwordconfirm, String firstname,
+                               String secondname, String phonenumber, String address,String role)  throws UsernameAlreadyExistsException, PasswordConfirmationException {
+        checkUserDoesNotAlreadyExist(username);
+        //checkAllFieldCompleted(username, password, firstname, passwordconfirm, secondname,phonenumber);
+        //checkPasswordformatException(password);
+        checkPasswordsMach(password, passwordconfirm);
+        userRepository.insert(new User(username, encodePassword(username, password),encodePassword(username, passwordconfirm), firstname, secondname, phonenumber, address,role));
     }
 
     private static void checkUserDoesNotAlreadyExist(String username) throws UsernameAlreadyExistsException {
@@ -35,7 +45,11 @@ public class UserService {
                 throw new UsernameAlreadyExistsException(username);
         }
     }
-
+    public static void checkPasswordsMach(String password, String passwordconfirm) throws PasswordConfirmationException {
+        if (!password.trim().equals(passwordconfirm.trim())) {
+            throw new PasswordConfirmationException();
+        }
+    }
     private static String encodePassword(String salt, String password) {
         MessageDigest md = getMessageDigest();
         md.update(salt.getBytes(StandardCharsets.UTF_8));

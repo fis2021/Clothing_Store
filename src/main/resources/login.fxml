@@ -16,7 +16,7 @@
             <children>
                 <ImageView fitHeight="387.0" fitWidth="282.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../../../Images/original.jpg" />
+                        <Image url="@Images/original.jpg" />
                     </image>
                 </ImageView>
                 <Button fx:id="backButton" layoutY="1.0" mnemonicParsing="false" onAction="#setBackButton" prefHeight="26.0" prefWidth="40.0" style="-fx-background-color: #cc9966#cc9966 #cc9966#cc9966;" text="Back">
@@ -32,7 +32,7 @@
             <children>
                 <ImageView fitHeight="32.0" fitWidth="46.0" layoutX="156.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../../../Images/pngfind.com-lock-icon-png-1130428.png" />
+                        <Image url="@Images/pngfind.com-lock-icon-png-1130428.png" />
                     </image>
                 </ImageView>
                 <Label layoutX="14.0" layoutY="117.0" text="Username" />

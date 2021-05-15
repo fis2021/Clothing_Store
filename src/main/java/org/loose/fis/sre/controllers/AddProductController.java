@@ -65,10 +65,8 @@ public class AddProductController {
         photoPath.setFitWidth(285);
         photoPath.rotateProperty();
     }
-    private String loggedUser;
-    private static String username,id;
-    @FXML
-    public void addProductAction(javafx.event.ActionEvent login) throws IOException {
+
+    public void addProductAction(javafx.event.ActionEvent event) throws IOException {
 
         try {
        AddProductService.addProduct(productNameField.getText(),
@@ -82,7 +80,7 @@ public class AddProductController {
                 Loader.setLocation(getClass().getClassLoader().getResource("MyProducts.fxml"));
                 Parent viewuserlogin = Loader.load();
                 Scene loginscene = new Scene(viewuserlogin, 650, 450);
-                Stage window = (Stage) ((Node) login.getSource()).getScene().getWindow();
+                Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 window.setScene(loginscene);
                 window.show();
             }

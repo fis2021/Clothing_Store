@@ -29,6 +29,7 @@ public class RegisterController {
         stageBack.setScene(new Scene(root, 600, 350));
         stageBack.show();
     }
+
    @FXML
     private Text registrationMessage = null;
     @FXML

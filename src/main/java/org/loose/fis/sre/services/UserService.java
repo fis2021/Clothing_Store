@@ -24,6 +24,7 @@ public class UserService {
         userRepository = database.getRepository(User.class);
     }
 
+
     public static void addUser(String username, String password, String passwordconfirm, String firstname,
                                String secondname, String phonenumber, String address,String email,String role)  throws UsernameAlreadyExistsException, FieldNotCompletedException,PasswordConfirmationException,WeakPasswordException {
         UserDoesNotAlreadyExist(username);

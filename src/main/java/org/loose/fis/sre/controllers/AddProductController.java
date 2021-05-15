@@ -1,24 +1,24 @@
 package org.loose.fis.sre.controllers;
+
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import org.loose.fis.sre.exceptions.FieldNotCompletedException;
+import org.loose.fis.sre.services.AddProductService;
+
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
-import  javafx.fxml.FXML;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import org.loose.fis.sre.exceptions.FieldNotCompletedException;
-import org.loose.fis.sre.exceptions.PasswordConfirmationException;
-import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
-import org.loose.fis.sre.exceptions.WeakPasswordException;
-import org.loose.fis.sre.services.AddProductService;
-import org.loose.fis.sre.services.UserService;
 
 public class AddProductController {
 
@@ -26,6 +26,8 @@ public class AddProductController {
     TextField productNameField;
     @FXML
     TextField productDescriptionField;
+    @FXML
+    TextField productPriceField;
     @FXML
     ChoiceBox selectSizeButton;
     @FXML
@@ -36,6 +38,8 @@ public class AddProductController {
     public Button backButton;
     public File file;
     public String path;
+    @FXML
+    public TextField usernameField;
 
     public void initialize() {
         selectSizeButton.getItems().addAll("XS", "S", "M","L","XL");
@@ -60,7 +64,7 @@ public class AddProductController {
     public void addProductAction(javafx.event.ActionEvent login) throws IOException {
 
         try {
-            AddProductService.addProduct(productNameField.getText(), productDescriptionField.getText(), (String) selectSizeButton.getValue(), path);
+            AddProductService.addProduct(productNameField.getText(), productDescriptionField.getText(), (String) selectSizeButton.getValue(), path, productPriceField.getText(), usernameField.getText());
             productNameField.clear();
             productDescriptionField.clear();
        {

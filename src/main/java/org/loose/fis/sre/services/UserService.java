@@ -1,8 +1,12 @@
 package org.loose.fis.sre.services;
-import org.loose.fis.sre.exceptions.*;
-import org.loose.fis.sre.model.User;
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
+import org.loose.fis.sre.exceptions.FieldNotCompletedException;
+import org.loose.fis.sre.exceptions.PasswordConfirmationException;
+import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
+import org.loose.fis.sre.exceptions.UsernameDoesNotExistsException;
+import org.loose.fis.sre.exceptions.WeakPasswordException;
+import org.loose.fis.sre.exceptions.WrongPasswordException;
 import org.loose.fis.sre.model.User;
 
 import java.nio.charset.StandardCharsets;
@@ -54,7 +58,7 @@ public class UserService {
 
         // This is the way a password should be encoded when checking the credentials
         return new String(hashedPassword, StandardCharsets.UTF_8)
-                .replace("\"", ""); //to be able to save in JSON format
+                .replace("\"", "");
     }
 
     private static MessageDigest getMessageDigest() {

@@ -48,17 +48,9 @@ public class RegisterController {
     TextField addressField;
     @FXML
     TextField emailField;
-   // @FXML
-    //public File file;
-    //@FXML
-   // public String path ;
     @FXML
    ChoiceBox role;
 
-    @FXML
-   /* public void initialize() {
-        this.role.getItems().addAll(new Object[]{"Seller", "Buyer"});
-    }*/
     public void initialize() {
         role.getItems().addAll("Seller", "Buyer");
     }
@@ -69,7 +61,6 @@ public class RegisterController {
             UserService.addUser(usernameField.getText(), passwordField.getText(), passwordconfirmField.getText(),
                     firstnameField.getText(), secondnameField.getText(), phonenumberField.getText(),
                     addressField.getText(),emailField.getText(),(String) role.getValue());
-            //registrationMessage.setText("Account created!");
             usernameField.clear();
             passwordField.clear();
             passwordconfirmField.clear();

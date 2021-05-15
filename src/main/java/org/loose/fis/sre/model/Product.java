@@ -1,7 +1,5 @@
 package org.loose.fis.sre.model;
 
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import org.dizitart.no2.objects.Id;
 
 public class Product {
@@ -10,16 +8,19 @@ public class Product {
     private String productName;
     private String productDescription;
     private String productSize;
+    private String productPrice;
     private String photo;
+    private String sellerName;
 
 
 
-    public Product(String productName, String productDescription, String productSize, String photo) {
+    public Product(String productName, String productDescription, String productSize, String photo, String productPrice,String sellerName) {
         this.productName = productName;
         this.productDescription = productDescription;
         this.productSize = productSize;
         this.photo=photo;
-
+        this.productPrice = productPrice;
+        this.sellerName=sellerName;
 
     }
 
@@ -35,5 +36,10 @@ public class Product {
     public String getProductSize() {
         return productSize;
     }
-
+    public String getProductPrice() {
+        return productPrice;
+    }
+    public String getSellerName() {
+        return sellerName;
+    }
 }

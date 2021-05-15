@@ -15,6 +15,7 @@ public class SellerPageController {
     public Button inboxButton;
     public Button addProductButton;
     public Button myProductsButton;
+    public MyProductsController myprod;
 
     public void setCancelButton(ActionEvent event) {
         Stage stage = (Stage) cancelButton.getScene().getWindow();

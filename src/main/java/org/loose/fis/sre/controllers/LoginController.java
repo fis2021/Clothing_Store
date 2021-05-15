@@ -90,5 +90,6 @@ public class LoginController {
 
         }
     }
+    public static String getLoggedUsername(){return loggedUsername;}
     }
 

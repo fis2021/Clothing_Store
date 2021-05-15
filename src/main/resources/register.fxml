@@ -13,7 +13,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.RegisterController">
    <left>
-      <AnchorPane prefHeight="400.0" prefWidth="237.0" style="-fx-background-color: #ffe6cc#ffe6cc;" BorderPane.alignment="CENTER">
+      <AnchorPane style="-fx-background-color: #ffe6cc#ffe6cc;" BorderPane.alignment="CENTER">
          <children>
             <Button fx:id="backButton" layoutY="-1.0" mnemonicParsing="false" onAction="#setBackButton" style="-fx-background-color: #cc9966#cc9966 #cc9966#cc9966;" text="Back" />
             <ImageView fitHeight="75.0" fitWidth="200.0" layoutX="19.0" layoutY="163.0">
@@ -30,7 +30,7 @@
       </AnchorPane>
    </left>
    <center>
-      <AnchorPane prefHeight="400.0" prefWidth="374.0" style="-fx-background-color: #ffe6cc#ffe6cc;" BorderPane.alignment="CENTER">
+      <AnchorPane style="-fx-background-color: #ffe6cc#ffe6cc;" BorderPane.alignment="CENTER">
          <children>
             <Text layoutX="28.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name" wrappingWidth="78.13671875" />
             <TextField fx:id="firstnameField" layoutX="109.0" layoutY="46.0" prefHeight="26.0" prefWidth="159.0" style="-fx-background-color: white;" />

@@ -27,10 +27,6 @@ public class UserService {
         userRepository = database.getRepository(User.class);
     }
 
-   /* public static void addUser(String username, String password, String role) throws UsernameAlreadyExistsException {
-        checkUserDoesNotAlreadyExist(username);
-        userRepository.insert(new User(username, encodePassword(username, password), role));
-    }*/
 
     public static void addUser(String username, String password, String passwordconfirm, String firstname,
                                String secondname, String phonenumber, String address,String email,String role)  throws UsernameAlreadyExistsException, FieldNotCompletedException,PasswordConfirmationException,WeakPasswordException {

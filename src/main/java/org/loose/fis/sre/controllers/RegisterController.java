@@ -29,29 +29,7 @@ public class RegisterController {
         stageBack.setScene(new Scene(root, 600, 350));
         stageBack.show();
     }
-    /*@FXML
-    private String registrationMessage="Account created";
-    @FXML
-    private PasswordField passwordField;
-    @FXML
-    private TextField usernameField;
-    @FXML
-    private ChoiceBox role;
 
-
-    public void initialize() {
-        role.getItems().addAll("Seller", "Buyer");
-    }
-
-
-    public void handleRegisterAction() {
-        try {
-            UserService.addUser(usernameField.getText(), passwordField.getText(), (String) role.getValue());
-            System.out.println(registrationMessage);
-        } catch (UsernameAlreadyExistsException e) {
-            System.out.println("Try again");
-        }
-    }*/
    @FXML
     private Text registrationMessage = null;
     @FXML

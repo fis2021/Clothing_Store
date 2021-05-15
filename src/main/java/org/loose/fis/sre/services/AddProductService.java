@@ -14,7 +14,7 @@ public class AddProductService {
 
     public static void initDatabase() {
         Nitrite database = Nitrite.builder()
-                .filePath(getPathToFile("product.db").toFile())
+                .filePath(getPathToFile("product2.db").toFile())
                 .openOrCreate("prod", "prod");
 
         productsRepository = database.getRepository(Product.class);

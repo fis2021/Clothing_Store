@@ -11,11 +11,14 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import org.dizitart.no2.NitriteId;
 import org.dizitart.no2.objects.ObjectRepository;
 import org.loose.fis.sre.exceptions.FieldNotCompletedException;
+import org.loose.fis.sre.exceptions.ProductDoesntExistException;
+import org.loose.fis.sre.exceptions.WrongPasswordException;
 import org.loose.fis.sre.model.User;
 import org.loose.fis.sre.services.AddProductService;
 import org.loose.fis.sre.services.UserService;
@@ -38,6 +41,8 @@ public class AddProductController {
     ChoiceBox selectSizeButton;
     @FXML
     ImageView photoPath;
+    @FXML
+    Text errorText;
     @FXML
     public Button finishButton;
     @FXML
@@ -85,17 +90,15 @@ public class AddProductController {
                 window.show();
             }
         } catch (FieldNotCompletedException e) {
-            System.out.println("Field not completed");
+                errorText.setText(e.getMessage());
+
+            }
+        catch (ProductDoesntExistException e) {
+            errorText.setText(e.getMessage());
+
         }
-
-
-
-
         }
-
-
-
-    public void setBackButton(ActionEvent event) throws IOException {
+        public void setBackButton(ActionEvent event) throws IOException {
         Stage stageBack = (Stage) backButton.getScene().getWindow();
         stageBack.setTitle("Welcome!");
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("SellerPage.fxml"));

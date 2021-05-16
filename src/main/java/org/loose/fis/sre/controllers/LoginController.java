@@ -13,6 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
+import org.loose.fis.sre.exceptions.FieldNotCompletedException;
 import org.loose.fis.sre.exceptions.UsernameDoesNotExistsException;
 import org.loose.fis.sre.exceptions.WrongPasswordException;
 import org.loose.fis.sre.model.User;
@@ -28,7 +29,7 @@ public class LoginController {
     public Button backButton;
     public Button loginButton;
     @FXML
-    private Text loginMessage;
+    private Text errorText;
     @FXML
     private TextField usernameField;
     @FXML
@@ -83,12 +84,13 @@ public class LoginController {
 
 
         } catch (UsernameDoesNotExistsException e) {
-            System.out.println("Usermane dont exist");
+            errorText.setText(e.getMessage());
 
         } catch (WrongPasswordException e) {
-           System.out.println("Wrong password");
+            errorText.setText(e.getMessage());
 
         }
+
     }
     public static String getLoggedUsername(){return loggedUsername;}
     }

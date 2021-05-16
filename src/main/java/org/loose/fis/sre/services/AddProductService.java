@@ -3,7 +3,10 @@ package org.loose.fis.sre.services;
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
 import org.loose.fis.sre.exceptions.FieldNotCompletedException;
+import org.loose.fis.sre.exceptions.ProductDoesntExistException;
+import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
 import org.loose.fis.sre.model.Product;
+import org.loose.fis.sre.model.User;
 
 import java.util.Objects;
 
@@ -20,16 +23,24 @@ public class AddProductService {
 
         productsRepository = database.getRepository(Product.class);
     }
-    public static void addProduct(String productName, String productDescription, String size, String photoPath,String productPrice,String sellerName)  throws  FieldNotCompletedException {
+    public static void addProduct(String productName, String productDescription, String size, String photoPath,String productPrice,String sellerName)  throws  FieldNotCompletedException,ProductDoesntExistException {
         FieldsCompleted(productName, productDescription, size);
+        ProductDoesntExist(productName);
         productsRepository.insert(new Product(productName,  productDescription, size, photoPath, productPrice,sellerName));
+
     }
     public static void FieldsCompleted(String productName, String productDescription, String size) throws FieldNotCompletedException {
         if (productName.trim().isEmpty() || productDescription.trim().isEmpty() || size.trim().isEmpty()) {
             throw new FieldNotCompletedException();
         }
     }
-    public static void deleteAd(String title, String validationUsername) throws FieldNotCompletedException
+    private static void ProductDoesntExist(String username) throws ProductDoesntExistException {
+        for (Product user : productsRepository.find()) {
+            if (Objects.equals(username, user.getProductName()))
+                throw new ProductDoesntExistException();
+        }
+    }
+    public static void deleteAd(String title, String validationUsername) throws FieldNotCompletedException, ProductDoesntExistException
     {
         Product product = new Product();
         for(Product i : productsRepository.find()) {

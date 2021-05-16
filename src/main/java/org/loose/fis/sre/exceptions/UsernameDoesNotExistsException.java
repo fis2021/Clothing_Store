@@ -4,6 +4,7 @@ public class UsernameDoesNotExistsException extends Exception {
 
 
     public UsernameDoesNotExistsException() {
-        super("An account with that username doesn't exists!");
+
+        super("Username does not exist");
     }
 }

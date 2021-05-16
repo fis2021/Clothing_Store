@@ -25,6 +25,7 @@
    <TextField fx:id="prSize" layoutX="38.0" layoutY="175.0" promptText="Product Size" />
    <ImageView fx:id="image" fitHeight="150.0" fitWidth="200.0" layoutX="21.0" layoutY="241.0" pickOnBounds="true" preserveRatio="true" />
    <Button fx:id="ChangeButton" layoutX="48.0" layoutY="433.0" mnemonicParsing="false" onAction="#setChangeButton" prefHeight="37.0" prefWidth="121.0" style="-fx-background-color: #d2a679#d2a679 #d2a679#d2a679 #d2a679#d2a679 #d2a679#d2a679;" text="Change Photo" />
+   <Text fx:id="errorText" layoutX="201.0" layoutY="483.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="234.2060546875" />
 
 
 </AnchorPane>

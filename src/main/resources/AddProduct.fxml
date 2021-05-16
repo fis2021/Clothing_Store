@@ -32,6 +32,7 @@
             <TextField fx:id="usernameField" layoutX="182.0" layoutY="22.0" />
             <Text layoutX="38.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your Username" />
             <Text layoutX="229.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Size" />
+            <Text fx:id="errorText" layoutX="112.0" layoutY="278.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="233.9831027984619" />
          </children>
       </AnchorPane>
    </center>

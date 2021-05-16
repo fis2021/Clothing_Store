@@ -11,17 +11,21 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.dizitart.no2.objects.ObjectRepository;
 import org.loose.fis.sre.exceptions.FieldNotCompletedException;
+import org.loose.fis.sre.exceptions.ProductDoesntExistException;
 import org.loose.fis.sre.model.Product;
 import org.loose.fis.sre.model.User;
 import org.loose.fis.sre.services.AddProductService;
 import org.loose.fis.sre.services.UserService;
 
+import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.util.Objects;
 
 
@@ -37,10 +41,14 @@ public class MyProductsController {
     @FXML
     public Button backButton;
     @FXML
+    public Text errorText;
+    @FXML
     public Button deleteButton;
     @FXML
     public Button editButton;
     public String name;
+    @FXML
+    private ImageView productImage;
 
     private static ObjectRepository<Product> productsRepository = AddProductService.getProductsRepository();
     private static ObjectRepository<User> userRepository = UserService.getUsers();
@@ -75,24 +83,14 @@ public class MyProductsController {
                 }
 
     }
-    public String aux;
 
     public void setEditButton (ActionEvent event) throws IOException, FieldNotCompletedException {
-      /*  aux=prodNameField.getText();
-        System.out.println(aux);
-        for (Product product : productsRepository.find())
-            if(aux.equals((product.getProductName()))){
-            //if (Objects.equals(prodNameField.getText(), product.getProductName())) {
-            */
                 Stage stageBack = (Stage) editButton.getScene().getWindow();
             Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("EditProduct.fxml"));
             stageBack.setScene(new Scene(root, 600, 350));
             stageBack.show();}
 
-    public String getProductNameField(){
-        return prodNameField.getText();
-    }
-    public void setDeleteButton (ActionEvent event) throws IOException {
+    public void setDeleteButton (ActionEvent event) throws IOException,FieldNotCompletedException, ProductDoesntExistException {
             try {
                 AddProductService.deleteAd(prodField.getText(), userField.getText());
                 {
@@ -101,11 +99,38 @@ public class MyProductsController {
                     stageBack.setScene(new Scene(root, 600, 350));
                     stageBack.show();
                 }
-            } catch (FieldNotCompletedException e) {
-                System.out.println("Field not completed");
+            }
+            catch (ProductDoesntExistException r) {
+                prodField.clear();
+                errorText.setText(r.getMessage());
+
+            }catch (FieldNotCompletedException e) {
+                    errorText.setText(e.getMessage()); }
+
             }
 
+    private void updateGUI() throws MalformedURLException {
+
+        for (Product product : productsRepository.find()){
+
+            if(prod2.equals(product.getProductName())){
+                File file = new File(product.getPhoto());
+                String localUrl = file.toURI().toURL().toExternalForm();
+                Image poza = new Image(localUrl, false);
+                productImage.setImage(poza);
+                productImage.setFitHeight(183);
+                productImage.setFitWidth(139);
+                productImage.rotateProperty();
+
+            }
         }
+    }
+
+    public String prod2;
+    public void showImage() throws MalformedURLException {
+        prod2 = productName.getSelectionModel().getSelectedItem();
+        updateGUI();
+    }
 
         public void setBackButton (ActionEvent event) throws IOException {
             Stage stageBack = (Stage) backButton.getScene().getWindow();

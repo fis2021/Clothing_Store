@@ -2,6 +2,7 @@ package org.loose.fis.sre.controllers;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import org.loose.fis.sre.controllers.MyProductsController;
 
@@ -17,6 +18,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import org.dizitart.no2.objects.ObjectRepository;
 import org.loose.fis.sre.exceptions.FieldNotCompletedException;
+import org.loose.fis.sre.exceptions.ProductDoesntExistException;
 import org.loose.fis.sre.model.Product;
 import org.loose.fis.sre.model.User;
 import org.loose.fis.sre.services.AddProductService;
@@ -44,10 +46,10 @@ public class EditProductController extends MyProductsController{
     @FXML
     public Button backButton;
     @FXML
-    public Button deleteButton;
-    @FXML
     public Button editButton;
     public String name;
+    @FXML
+    public Text errorText;
     public String path;
     @FXML
     ImageView image;
@@ -116,19 +118,22 @@ public class EditProductController extends MyProductsController{
                 try {
                     AddProductService.deleteAd(prName.getText(), userField.getText());
 
-                } catch (FieldNotCompletedException e) {
-                    System.out.println("Field not completed");
+                } catch (FieldNotCompletedException | ProductDoesntExistException e) {
+                    errorText.setText(e.getMessage());
                 }
 
+                try {
                     AddProductService.addProduct(prName.getText(),
                             prDesc.getText(),
                             prSize.getText(),
                             path, prPrice.getText(), userField.getText());
-                Stage stageBack = (Stage) editButton.getScene().getWindow();
-                Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("MyProducts.fxml"));
-                stageBack.setScene(new Scene(root, 600, 350));
-                stageBack.show();
-
+                    Stage stageBack = (Stage) editButton.getScene().getWindow();
+                    Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("MyProducts.fxml"));
+                    stageBack.setScene(new Scene(root, 600, 350));
+                    stageBack.show();
+                } catch (FieldNotCompletedException | ProductDoesntExistException e) {
+                    errorText.setText(e.getMessage());
+                }
             }
     }
 
@@ -137,7 +142,7 @@ public class EditProductController extends MyProductsController{
     public void setBackButton(ActionEvent event) throws IOException {
         Stage stageBack = (Stage) backButton.getScene().getWindow();
         stageBack.setTitle("Welcome!");
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("SellerPage.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("MyProducts.fxml"));
         stageBack.setScene(new Scene(root, 600, 350));
         stageBack.show();
     }

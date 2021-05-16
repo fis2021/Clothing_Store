@@ -12,8 +12,6 @@ public class Product {
     private String photo;
     private String sellerName;
 
-
-
     public Product(String productName, String productDescription, String productSize, String photo, String productPrice,String sellerName) {
         this.productName = productName;
         this.productDescription = productDescription;
@@ -33,14 +31,12 @@ public class Product {
     public String getProductDescription() {
         return productDescription;
     }
-    public String getProductSize() {
-        return productSize;
-    }
+    public String getProductSize() { return productSize; }
     public String getProductPrice() {
         return productPrice;
     }
-    public String getSellerName() {
-        return sellerName;
-    }
-    public String getPhoto() { return photo;  }
+
+    public  String getSellerName() { return sellerName; }
+     public String getPhoto() { return photo;  }
+
 }

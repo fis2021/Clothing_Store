@@ -13,15 +13,21 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import org.dizitart.no2.NitriteId;
+import org.dizitart.no2.objects.ObjectRepository;
 import org.loose.fis.sre.exceptions.FieldNotCompletedException;
+import org.loose.fis.sre.model.User;
 import org.loose.fis.sre.services.AddProductService;
+import org.loose.fis.sre.services.UserService;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 
-public class AddProductController {
+import static org.dizitart.no2.objects.filters.ObjectFilters.eq;
 
+public class AddProductController {
+    private final ObjectRepository<User> REPOSITORY = UserService.getUsers();
     @FXML
     TextField productNameField;
     @FXML
@@ -60,11 +66,13 @@ public class AddProductController {
         photoPath.rotateProperty();
     }
 
-    @FXML
-    public void addProductAction(javafx.event.ActionEvent login) throws IOException {
+    public void addProductAction(javafx.event.ActionEvent event) throws IOException {
 
         try {
-            AddProductService.addProduct(productNameField.getText(), productDescriptionField.getText(), (String) selectSizeButton.getValue(), path, productPriceField.getText(), usernameField.getText());
+       AddProductService.addProduct(productNameField.getText(),
+                    productDescriptionField.getText(),
+                    (String) selectSizeButton.getValue(),
+                    path, productPriceField.getText(), usernameField.getText());
             productNameField.clear();
             productDescriptionField.clear();
        {
@@ -72,7 +80,7 @@ public class AddProductController {
                 Loader.setLocation(getClass().getClassLoader().getResource("MyProducts.fxml"));
                 Parent viewuserlogin = Loader.load();
                 Scene loginscene = new Scene(viewuserlogin, 650, 450);
-                Stage window = (Stage) ((Node) login.getSource()).getScene().getWindow();
+                Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 window.setScene(loginscene);
                 window.show();
             }

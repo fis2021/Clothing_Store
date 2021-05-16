@@ -2,50 +2,45 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.MyOrdersController">
    <children>
-      <AnchorPane layoutX="180.0" layoutY="5.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffe6cc;">
+      <AnchorPane prefHeight="410.0" prefWidth="600.0" style="-fx-background-color: #ffe6cc;">
          <children>
-            <Button fx:id="backButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#setBackButton" prefHeight="25.0" prefWidth="49.0" style="-fx-background-color: #cc9966#cc9966 #cc9966#cc9966;" text="Back" />
-            <Button fx:id="ordersButton" layoutX="79.0" layoutY="27.0" mnemonicParsing="false" onAction="#setOrdersButton" prefHeight="48.0" prefWidth="107.0" style="-fx-background-color: #cc9966#cc9966 #cc9966#cc9966;" text="My Orders" />
-            <ImageView fx:id="productImage" fitHeight="137.0" fitWidth="165.0" layoutX="19.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true" />
-            <TextField fx:id="productDescription" layoutX="18.0" layoutY="239.0" prefHeight="50.0" prefWidth="165.0" />
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutY="-6.0" prefHeight="411.0" prefWidth="600.0" style="-fx-background-color: #ffe6cc;">
-         <children>
-            <ListView fx:id="productName" layoutX="19.0" layoutY="104.0" onMouseClicked="#showImage" prefHeight="232.0" prefWidth="89.0" />
-            <ListView fx:id="productSize" layoutX="108.0" layoutY="104.0" prefHeight="232.0" prefWidth="86.0" />
-            <ListView fx:id="productPrice" layoutX="194.0" layoutY="104.0" prefHeight="232.0" prefWidth="90.0" />
-            <ListView fx:id="productSeller" layoutX="284.0" layoutY="104.0" prefHeight="232.0" prefWidth="100.0" />
-            <Text layoutX="35.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Product" wrappingWidth="57.390625">
+            <ListView fx:id="productName" layoutX="176.0" layoutY="63.0" prefHeight="315.0" prefWidth="89.0" style="-fx-background-color: #d9d9d9;" />
+            <ListView fx:id="productSize" layoutX="265.0" layoutY="63.0" prefHeight="315.0" prefWidth="59.0" style="-fx-background-color: #cccccc;" />
+            <ListView fx:id="productPrice" layoutX="323.0" layoutY="63.0" prefHeight="315.0" prefWidth="59.0" style="-fx-background-color: #d9d9d9;" />
+            <ListView fx:id="productSeller" layoutX="468.0" layoutY="63.0" prefHeight="315.0" prefWidth="100.0" style="-fx-background-color: #d9d9d9;" />
+            <Text layoutX="192.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Product" wrappingWidth="57.390625">
                <font>
                   <Font name="Goudy Old Style" size="18.0" />
                </font>
             </Text>
-            <Text layoutX="138.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Size" wrappingWidth="38.982421875">
+            <Text layoutX="275.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Size" wrappingWidth="38.982421875">
                <font>
                   <Font name="Goudy Old Style" size="18.0" />
                </font>
             </Text>
-            <Text layoutX="215.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price" wrappingWidth="48.6171875">
+            <Text layoutX="328.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price" wrappingWidth="48.6171875">
                <font>
                   <Font name="Goudy Old Style" size="18.0" />
                </font>
             </Text>
-            <Text layoutX="314.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seller" wrappingWidth="39.91015625">
+            <Text layoutX="508.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seller" wrappingWidth="39.91015625">
                <font>
                   <Font name="Goudy Old Style" size="18.0" />
                </font>
             </Text>
-            <Button fx:id="backButton1" layoutX="11.0" layoutY="14.0" mnemonicParsing="false" onAction="#setBackButton" prefHeight="25.0" prefWidth="49.0" style="-fx-background-color: #cc9966#cc9966 #cc9966#cc9966;" text="Back" />
+            <ListView fx:id="productDescription" layoutX="382.0" layoutY="63.0" prefHeight="315.0" prefWidth="86.0" style="-fx-background-color: #cccccc;" />
+            <Text layoutX="383.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" wrappingWidth="84.6171875">
+               <font>
+                  <Font name="Goudy Old Style" size="18.0" />
+               </font>
+            </Text>
+            <Button fx:id="backButton" layoutX="14.0" layoutY="20.0" mnemonicParsing="false" onAction="#setBackButton" prefHeight="25.0" prefWidth="49.0" style="-fx-background-color: #cc9966#cc9966 #cc9966#cc9966;" text="Back" />
          </children>
       </AnchorPane>
    </children>

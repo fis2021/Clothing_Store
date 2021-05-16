@@ -165,16 +165,15 @@ public String nameaux;
             System.out.println(prodName);
             System.out.println(productID.getText());
             nameaux=productID.getText();
-            if(prodName.equals( nameaux)){
+            if(prodName.equals(nameaux)){
 
                 buyMessage.setText("Produs achizitionat!");
                 BuyProductService.buyProduct(prodName, prodDescription, prodSize, prodPrice, prodSeller, buyerName);
                 productID.clear();
                 sellerID.clear();
 
-             //   FXMLLoader Loader = new FXMLLoader();
-              //  Loader.setLocation(getClass().getClassLoader().getResource("BuyerPage.fxml"));
-
+               FXMLLoader Loader = new FXMLLoader();
+               Loader.setLocation(getClass().getClassLoader().getResource("BuyerPage.fxml"));
         }
 
 

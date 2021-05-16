@@ -5,42 +5,45 @@ import org.dizitart.no2.objects.Id;
 public class BuyedProduct {
 
     @Id
-    private String productName;
-    private String productDescription;
-    private String productSize;
-    private String productPrice;
+    private String buyedproductName;
+    private String buyedproductDescription;
+    private String buyedproductSize;
+    private String buyedproductPrice;
     private String photo;
-    private String sellerName;
+    private String buyedsellerName;
     private String buyerName;
 
 
     public BuyedProduct(String productName, String productDescription, String productSize, String productPrice,String sellerName,String buyerName) {
-        this.productName = productName;
-        this.productDescription = productDescription;
-        this.productSize = productSize;
+        this.buyedproductName = productName;
+        this.buyedproductDescription = productDescription;
+        this.buyedproductSize = productSize;
        // this.photo=photo;
-        this.productPrice = productPrice;
-        this.sellerName=sellerName;
+        this.buyedproductPrice = productPrice;
+        this.buyedsellerName=sellerName;
         this.buyerName=buyerName;
     }
 
     public BuyedProduct() {
     }
 
-    public String getProductName() {
-        return productName;
+    public String getbuyedProductName() {
+        return buyedproductName;
     }
-    public String getProductDescription() {
-        return productDescription;
+    public String getbuyedProductDescription() {
+        return buyedproductDescription;
     }
-    public String getProductSize() {
-        return productSize;
+    public String getbuyedProductSize() {
+        return buyedproductSize;
     }
-    public String getProductPrice() {
-        return productPrice;
+    public String getbuyedProductPrice() {
+        return buyedproductPrice;
     }
-    public String getSellerName() {
-        return sellerName;
+    public String getbuyedSellerName() {
+        return buyedsellerName;
+    }
+    public String getbuyerName() {
+        return buyerName;
     }
     public String getPhoto() { return photo;  }
 }

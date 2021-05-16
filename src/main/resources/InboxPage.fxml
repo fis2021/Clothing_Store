@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-
-<?import javafx.scene.control.Button?>
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffe6cc#ffe6cc;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.InboxController">
    <left>
 
@@ -12,6 +14,49 @@
       <Button fx:id="backButton" layoutY="-1.0" mnemonicParsing="false" onAction="#setBackButton" style="-fx-background-color: #cc9966#cc9966 #cc9966#cc9966;" text="Back" />
    </left>
    <right>
-      <AnchorPane prefHeight="400.0" prefWidth="444.0" BorderPane.alignment="CENTER" />
+      <AnchorPane prefHeight="400.0" prefWidth="538.0" BorderPane.alignment="CENTER">
+         <children>
+            <ListView fx:id="productName" layoutX="14.0" layoutY="71.0" prefHeight="315.0" prefWidth="89.0" style="-fx-background-color: #d9d9d9;" />
+            <ListView fx:id="productSize" layoutX="103.0" layoutY="71.0" prefHeight="315.0" prefWidth="59.0" style="-fx-background-color: #cccccc;" />
+            <ListView fx:id="productPrice" layoutX="162.0" layoutY="71.0" prefHeight="315.0" prefWidth="59.0" style="-fx-background-color: #d9d9d9;" />
+            <ListView fx:id="productDescription" layoutX="221.0" layoutY="71.0" prefHeight="315.0" prefWidth="86.0" style="-fx-background-color: #cccccc;" />
+            <ListView fx:id="productBuyer" layoutX="307.0" layoutY="71.0" prefHeight="315.0" prefWidth="93.0" style="-fx-background-color: #d9d9d9;" />
+            <ListView fx:id="productAddress" layoutX="400.0" layoutY="71.0" prefHeight="315.0" prefWidth="100.0" style="-fx-background-color: #cccccc;" />
+            <Text layoutX="30.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Product" wrappingWidth="57.390625">
+               <font>
+                  <Font name="Goudy Old Style Italic" size="18.0" />
+               </font>
+            </Text>
+            <Text layoutX="111.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Size" wrappingWidth="43.390625">
+               <font>
+                  <Font name="Goudy Old Style Italic" size="18.0" />
+               </font>
+            </Text>
+            <Text layoutX="169.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price" wrappingWidth="57.390625">
+               <font>
+                  <Font name="Goudy Old Style Italic" size="18.0" />
+               </font>
+            </Text>
+            <Text layoutX="225.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" wrappingWidth="77.390625">
+               <font>
+                  <Font name="Goudy Old Style Italic" size="18.0" />
+               </font>
+            </Text>
+            <Text layoutX="325.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Buyer" wrappingWidth="57.390625">
+               <font>
+                  <Font name="Goudy Old Style Italic" size="18.0" />
+               </font>
+            </Text>
+            <Text layoutX="421.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" wrappingWidth="57.390625">
+               <font>
+                  <Font name="Goudy Old Style Italic" size="18.0" />
+               </font>
+            </Text>
+            <Text fill="#575656" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Orders:" textAlignment="CENTER" underline="true" wrappingWidth="166.705078125">
+               <font>
+                  <Font name="Book Antiqua Italic" size="18.0" />
+               </font>
+            </Text>
+         </children></AnchorPane>
    </right>
 </BorderPane>

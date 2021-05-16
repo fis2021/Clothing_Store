@@ -6,7 +6,8 @@ import java.util.Objects;
 
 public class User {
 
-   @Id
+    private static String address1;
+    @Id
    private String username;
     private String password;
     private String passwordconfirm;
@@ -27,6 +28,7 @@ public class User {
         this.address = address;
         this.email = email;
         this.role = role;
+        //this.address1=address;
     }
 
     public User() {
@@ -44,6 +46,9 @@ public class User {
         return password;
     }
 
+    public String getAddress() {
+        return address;
+    }
 
 
     public String getRole(){return role;}

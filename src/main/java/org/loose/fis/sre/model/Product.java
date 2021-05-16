@@ -21,7 +21,7 @@ public class Product {
         this.photo=photo;
         this.productPrice = productPrice;
         this.sellerName=sellerName;
-        this.productName2=productName;
+
     }
 
     public Product() {
@@ -43,9 +43,6 @@ public class Product {
     }
     public String getPhoto() { return photo;  }
 
-
-    public  String getSellerName() { return sellerName; }
-     public String getPhoto() { return photo;  }
 
 
 }

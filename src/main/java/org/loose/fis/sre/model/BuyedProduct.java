@@ -14,11 +14,11 @@ public class BuyedProduct {
     private String buyerName;
 
 
-    public BuyedProduct(String productName, String productDescription, String productSize, String photo, String productPrice,String sellerName,String buyerName) {
+    public BuyedProduct(String productName, String productDescription, String productSize, String productPrice,String sellerName,String buyerName) {
         this.productName = productName;
         this.productDescription = productDescription;
         this.productSize = productSize;
-        this.photo=photo;
+       // this.photo=photo;
         this.productPrice = productPrice;
         this.sellerName=sellerName;
         this.buyerName=buyerName;

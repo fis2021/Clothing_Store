@@ -18,8 +18,8 @@ public class BuyProductService {
 
         buyedProductsRepository = database.getRepository(BuyedProduct.class);
     }
-    public static void buyProduct(String productName, String productDescription, String size, String photoPath,String productPrice,String sellerName, String buyerName)  {
-        buyedProductsRepository.insert(new BuyedProduct(productName,  productDescription, size, photoPath, productPrice,sellerName,buyerName));
+    public static void buyProduct(String productName, String productDescription, String size,String productPrice,String sellerName, String buyerName)  {
+        buyedProductsRepository.insert(new BuyedProduct(productName,  productDescription, size, productPrice,sellerName,buyerName));
     }
 
 

@@ -21,7 +21,7 @@ import org.loose.fis.sre.services.BuyProductService;
 
 import java.io.IOException;
 
-public class BuyerPageController {
+public class BuyerPageController<pulbic> {
 
 
     private static ObjectRepository<Product> productsRepository = AddProductService.getProductsRepository();
@@ -42,6 +42,12 @@ public class BuyerPageController {
     public ListView<String> productPrice = new ListView<>();
     public ListView<String> productSeller = new ListView<>();
     public ListView<String> productDescription = new ListView<>();
+
+    public String prodName;
+    public String prodSize;
+    public String prodPrice;
+    public String prodSeller;
+    public String prodDescription;
 
 
     public Text buyMessage;
@@ -107,7 +113,7 @@ public class BuyerPageController {
 
 
         sizeID.getItems().addAll("XS", "S", "M","L","XL");
-        }
+    }
 
 
 
@@ -143,23 +149,36 @@ public class BuyerPageController {
 public String nameaux;
 
     public void setBuyButton(ActionEvent event) throws IOException {
+
+
         for (Product product : productsRepository.find()) {
-            nameaux=product.getProductName();
-            System.out.println(nameaux);
+
+            prodName = product.getProductName();
+            prodPrice = product.getProductPrice();
+            prodSize = product.getProductSize();
+            prodDescription = product.getProductDescription();
+            prodSeller = product.getSellerName();
+            buyerName = LoginController.getLoggedUsername();
+
+
+
+            System.out.println(prodName);
             System.out.println(productID.getText());
-            if(Object.equals(nameaux,productID.getText())){
+            nameaux=productID.getText();
+            if(prodName.equals( nameaux)){
+
                 buyMessage.setText("Produs achizitionat!");
-            BuyProductService.buyProduct(productName.getAccessibleText(), productDescription.getAccessibleText(), productSize.getAccessibleText(), photo.getAccessibleText(), productPrice.getAccessibleText(), productSeller.getAccessibleText(), buyerName);
-            productID.clear();
-            sellerID.clear();
-            {
-                FXMLLoader Loader = new FXMLLoader();
-                Loader.setLocation(getClass().getClassLoader().getResource("BuyerPage.fxml"));
-            }
+                BuyProductService.buyProduct(prodName, prodDescription, prodSize, prodPrice, prodSeller, buyerName);
+                productID.clear();
+                sellerID.clear();
+
+             //   FXMLLoader Loader = new FXMLLoader();
+              //  Loader.setLocation(getClass().getClassLoader().getResource("BuyerPage.fxml"));
 
         }
 
 
     }
-}}
+}
+}
 

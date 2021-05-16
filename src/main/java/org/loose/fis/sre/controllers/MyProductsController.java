@@ -16,7 +16,6 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.dizitart.no2.objects.ObjectRepository;
 import org.loose.fis.sre.exceptions.FieldNotCompletedException;
-import org.loose.fis.sre.exceptions.UsernameDoesNotExistsException;
 import org.loose.fis.sre.model.Product;
 import org.loose.fis.sre.model.User;
 import org.loose.fis.sre.services.AddProductService;
@@ -29,19 +28,26 @@ import java.util.Objects;
 public class MyProductsController {
 
     private static String loggedUser;
-
-    private static ObjectRepository<Product> productsRepository = AddProductService.getProductsRepository();
-    private static ObjectRepository<User> userRepository = UserService.getUsers();
-
     @FXML
     public TextField prodField;
     @FXML
     public TextField userField;
-
+    @FXML
+    public TextField prodNameField;
     @FXML
     public Button backButton;
     @FXML
     public Button deleteButton;
+    @FXML
+    public Button editButton;
+    public String name;
+
+    private static ObjectRepository<Product> productsRepository = AddProductService.getProductsRepository();
+    private static ObjectRepository<User> userRepository = UserService.getUsers();
+
+
+
+
     @FXML
     public ListView<String> productName = new ListView<>();
     public ListView<String> productSize = new ListView<>();
@@ -69,20 +75,28 @@ public class MyProductsController {
                 }
 
     }
+    public String aux;
 
-    public void setEditButton (ActionEvent event) throws IOException {
-        Stage stageBack = (Stage) backButton.getScene().getWindow();
-        stageBack.setTitle("Welcome!");
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("EditProduct.fxml"));
-        stageBack.setScene(new Scene(root, 600, 350));
-        stageBack.show();
+    public void setEditButton (ActionEvent event) throws IOException, FieldNotCompletedException {
+      /*  aux=prodNameField.getText();
+        System.out.println(aux);
+        for (Product product : productsRepository.find())
+            if(aux.equals((product.getProductName()))){
+            //if (Objects.equals(prodNameField.getText(), product.getProductName())) {
+            */
+                Stage stageBack = (Stage) editButton.getScene().getWindow();
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("EditProduct.fxml"));
+            stageBack.setScene(new Scene(root, 600, 350));
+            stageBack.show();}
+
+    public String getProductNameField(){
+        return prodNameField.getText();
     }
     public void setDeleteButton (ActionEvent event) throws IOException {
             try {
                 AddProductService.deleteAd(prodField.getText(), userField.getText());
                 {
                     Stage stageBack = (Stage) deleteButton.getScene().getWindow();
-                    stageBack.setTitle("Welcome!");
                     Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("MyProducts.fxml"));
                     stageBack.setScene(new Scene(root, 600, 350));
                     stageBack.show();

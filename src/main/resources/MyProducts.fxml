@@ -16,7 +16,7 @@
    <Text layoutX="336.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" />
    <Text layoutX="441.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price" />
    <Text layoutX="524.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Size" />
-   <Button fx:id="editButton" layoutX="24.0" layoutY="326.0" mnemonicParsing="false" onAction="#setEditButton" prefHeight="37.0" prefWidth="83.0" style="-fx-background-color: #d2a679#d2a679 #d2a679#d2a679;" text="Edit" />
+   <Button fx:id="editButton" layoutX="66.0" layoutY="337.0" mnemonicParsing="false" onAction="#setEditButton" prefHeight="37.0" prefWidth="83.0" style="-fx-background-color: #d2a679#d2a679 #d2a679#d2a679;" text="Edit" />
    <Button fx:id="deleteButton" layoutX="60.0" layoutY="140.0" mnemonicParsing="false" onAction="#setDeleteButton" prefHeight="37.0" prefWidth="95.0" style="-fx-background-color: #d2a679#d2a679 #d2a679#d2a679;" text="Delete" />
    <TextField fx:id="prodField" layoutX="38.0" layoutY="62.0" promptText="Product name" />
    <TextField fx:id="userField" layoutX="38.0" layoutY="98.0" promptText="Enter your username" />

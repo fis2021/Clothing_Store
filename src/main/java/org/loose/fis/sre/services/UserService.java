@@ -35,7 +35,7 @@ public class UserService {
         FieldsCompleted(username, password, firstname, passwordconfirm, secondname,phonenumber,address);
         PasswordformatException(password);
         PasswordsMach(password, passwordconfirm);
-        userRepository.insert(new User(username, encodePassword(username, password),encodePassword(username, passwordconfirm), firstname, secondname, phonenumber, email, address,role));
+        userRepository.insert(new User(username, encodePassword(username, password),encodePassword(username, passwordconfirm), firstname, secondname, phonenumber,  address,email,role));
     }
 
     private static void UserDoesNotAlreadyExist(String username) throws UsernameAlreadyExistsException {
@@ -111,5 +111,8 @@ public class UserService {
             throw new WeakPasswordException();
     }
 
+    public static ObjectRepository<User>  getUserRepository(){
+        return userRepository;
+    }
 
 }

@@ -30,6 +30,9 @@ public class BuyedProduct {
     public String getbuyedProductName() {
         return buyedproductName;
     }
+    public String getbuyedBuyerName() {
+        return buyerName;
+    }
     public String getbuyedProductDescription() {
         return buyedproductDescription;
     }

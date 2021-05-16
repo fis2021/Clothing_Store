@@ -32,7 +32,7 @@ public class SellerPageController {
         Stage stageBack = (Stage) myProductsButton.getScene().getWindow();
         stageBack.setTitle("Welcome!");
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("MyProducts.fxml"));
-        stageBack.setScene(new Scene(root, 600, 350));
+        stageBack.setScene(new Scene(root, 700, 450));
         stageBack.show();
     }
     public void setInboxButton(ActionEvent event) throws IOException {

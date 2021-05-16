@@ -1,6 +1,7 @@
 package org.loose.fis.sre.services;
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
+import org.loose.fis.sre.controllers.RegisterController;
 import org.loose.fis.sre.exceptions.FieldNotCompletedException;
 import org.loose.fis.sre.exceptions.PasswordConfirmationException;
 import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
@@ -30,7 +31,8 @@ public class UserService {
 
 
     public static void addUser(String username, String password, String passwordconfirm, String firstname,
-                               String secondname, String phonenumber, String address,String email,String role)  throws UsernameAlreadyExistsException, FieldNotCompletedException,PasswordConfirmationException,WeakPasswordException {
+                               String secondname, String phonenumber, String address,String email,String role) throws Exception {
+
         UserDoesNotAlreadyExist(username);
         FieldsCompleted(username, password, firstname, passwordconfirm, secondname,phonenumber,address);
         PasswordformatException(password);

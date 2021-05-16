@@ -17,20 +17,27 @@ import org.loose.fis.sre.exceptions.PasswordConfirmationException;
 import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
 import org.loose.fis.sre.exceptions.WeakPasswordException;
 import org.loose.fis.sre.services.UserService;
+import java.util.Properties;
+import javax.mail.*;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class RegisterController {
     public Button backButton;
+
     public void setBackButton(ActionEvent event) throws IOException {
-        Stage stageBack=(Stage) backButton.getScene().getWindow();
+        Stage stageBack = (Stage) backButton.getScene().getWindow();
         stageBack.setTitle("Welcome!");
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("WelcomePage.fxml"));
         stageBack.setScene(new Scene(root, 600, 350));
         stageBack.show();
     }
 
-   @FXML
+    @FXML
     private Text registrationMessage = null;
     @FXML
     private PasswordField passwordField;
@@ -49,18 +56,54 @@ public class RegisterController {
     @FXML
     TextField emailField;
     @FXML
-   ChoiceBox role;
+    ChoiceBox role;
 
     public void initialize() {
         role.getItems().addAll("Seller", "Buyer");
     }
+    private static Message prepareMessage(Session session, String myAccEmail, String receptioner) {
+        try {
+            Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(myAccEmail));
+            message.setRecipient(Message.RecipientType.TO, new InternetAddress(receptioner));
+            message.getSubject();
+            message.setText("Welcome to our Clothing Store");
+            return message;
 
-    @FXML
-    public void handleRegisterAction(javafx.event.ActionEvent login) throws IOException {
+        } catch (Exception e) {
+            Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return null;
+    }
+    public static void sendMail(String receptioner) throws Exception {
+        Properties properties = new Properties();
+        properties.put("mail.smtp.auth", "true");
+        properties.put("mail.smtp.starttls.enable", "true");
+        properties.put("mail.smtp.host", "smtp.gmail.com");
+        properties.put("mail.smtp.port", "587");
+
+        String myAccEmail = "clothingstore344@gmail.com";
+        String pass = "clothingstore";
+
+        Session session = Session.getInstance(properties, new Authenticator() {
+
+            protected PasswordAuthentication getPasswordAuthenticatoin() {
+                return new PasswordAuthentication(myAccEmail, pass);
+            }
+        });
+        Message message = prepareMessage(session, myAccEmail, receptioner);
+        Transport.send(message);
+        System.out.println("Sent");
+
+    }
+  @FXML
+    public void handleRegisterAction(javafx.event.ActionEvent login) throws Exception {
+
         try {
             UserService.addUser(usernameField.getText(), passwordField.getText(), passwordconfirmField.getText(),
                     firstnameField.getText(), secondnameField.getText(), phonenumberField.getText(),
                     addressField.getText(),emailField.getText(),(String) role.getValue());
+
             usernameField.clear();
             passwordField.clear();
             passwordconfirmField.clear();
@@ -68,8 +111,11 @@ public class RegisterController {
             secondnameField.clear();
             phonenumberField.clear();
             addressField.clear();
+            emailField.clear();
+
 
             {
+
                 FXMLLoader Loader = new FXMLLoader();
                 Loader.setLocation(getClass().getClassLoader().getResource("login.fxml"));
                 Parent viewuserlogin = Loader.load();
@@ -101,7 +147,9 @@ public class RegisterController {
 
 
 
-            }
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
 //fx:controller="org.loose.fis.sre.controllers.RegisterController"
 
 }}

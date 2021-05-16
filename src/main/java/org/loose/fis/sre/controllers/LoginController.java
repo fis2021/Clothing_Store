@@ -47,7 +47,7 @@ public class LoginController {
 
     public void setBackButton(ActionEvent event) throws IOException {
         Stage stageBack = (Stage) backButton.getScene().getWindow();
-        stageBack.setTitle("Welcome!");
+
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("WelcomePage.fxml"));
         stageBack.setScene(new Scene(root, 600, 350));
         stageBack.show();
@@ -67,14 +67,14 @@ public class LoginController {
             if(Objects.equals(role,"Seller"))
             {
                 Stage stageLogin=(Stage) loginButton.getScene().getWindow();
-                stageLogin.setTitle("LOGIN");
+
                 Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("SellerPage.fxml"));
                 stageLogin.setScene(new Scene(root, 600, 350));
                 stageLogin.show();
             }
                 if(Objects.equals(role,"Buyer")){
                 Stage stageLogin=(Stage) loginButton.getScene().getWindow();
-                stageLogin.setTitle("LOGIN");
+
                 Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("BuyerPage.fxml"));
                 stageLogin.setScene(new Scene(root, 600, 350));
                 stageLogin.show();

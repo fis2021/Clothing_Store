@@ -73,7 +73,6 @@ public class BuyerPageController {
 
     public void setBackButton(ActionEvent event) throws IOException {
         Stage stageBack = (Stage) backButton.getScene().getWindow();
-        stageBack.setTitle("Welcome!");
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("WelcomePage.fxml"));
         stageBack.setScene(new Scene(root, 600, 350));
         stageBack.show();
@@ -199,7 +198,6 @@ public String prod2;
 public void setRefreshButton() throws IOException {
 
     Stage stageref = (Stage) refreshButton.getScene().getWindow();
-    stageref.setTitle("SHOP");
     Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("BuyerPage.fxml"));
     stageref.setScene(new Scene(root, 600, 350));
     stageref.show();

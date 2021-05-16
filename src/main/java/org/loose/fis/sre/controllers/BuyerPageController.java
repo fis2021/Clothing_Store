@@ -90,6 +90,7 @@ public class BuyerPageController {
         ObservableList<String> c = FXCollections.observableArrayList();
         ObservableList<String> d = FXCollections.observableArrayList();
         ObservableList<String> e = FXCollections.observableArrayList();
+
           for (Product product : productsRepository.find()) {
                 a.add(product.getProductName());
                 productName.setItems(a);}

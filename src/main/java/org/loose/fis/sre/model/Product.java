@@ -35,6 +35,8 @@ public class Product {
     public String getProductPrice() {
         return productPrice;
     }
+
     public  String getSellerName() { return sellerName; }
+     public String getPhoto() { return photo;  }
 
 }

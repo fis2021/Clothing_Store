@@ -6,12 +6,15 @@ public class Product {
 
     @Id
     private String productName;
+
     private String productDescription;
     private String productSize;
     private String productPrice;
     private String photo;
     private String sellerName;
 
+
+    private static String productName2;
 
 
     public Product(String productName, String productDescription, String productSize, String photo, String productPrice,String sellerName) {
@@ -21,7 +24,7 @@ public class Product {
         this.photo=photo;
         this.productPrice = productPrice;
         this.sellerName=sellerName;
-
+        this.productName2=productName;
     }
 
     public Product() {
@@ -43,4 +46,5 @@ public class Product {
         return sellerName;
     }
     public String getPhoto() { return photo;  }
+
 }

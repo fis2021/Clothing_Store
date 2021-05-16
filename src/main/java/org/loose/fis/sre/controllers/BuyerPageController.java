@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -19,7 +20,9 @@ import org.loose.fis.sre.model.Product;
 import org.loose.fis.sre.services.AddProductService;
 import org.loose.fis.sre.services.BuyProductService;
 
+import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
 
 public class BuyerPageController {
 
@@ -35,13 +38,17 @@ public class BuyerPageController {
     public Button ordersButton;
     @FXML
     public Button buyButton;
-
+    @FXML
+    public Button refreshButton;
     @FXML
     public ListView<String> productName = new ListView<>();
     public ListView<String> productSize = new ListView<>();
     public ListView<String> productPrice = new ListView<>();
     public ListView<String> productSeller = new ListView<>();
     public ListView<String> productDescription = new ListView<>();
+
+
+
 
     public String prodName;
     public String prodSize;
@@ -51,7 +58,8 @@ public class BuyerPageController {
 
 
     public Text buyMessage;
-    public ImageView photo;
+    public Text buyMessage2;
+
     @FXML
     private ImageView productImage;
 
@@ -74,6 +82,8 @@ public class BuyerPageController {
     public void initialize() throws IOException {
 
         buyerName = LoginController.getLoggedUsername();
+        buyMessage.setText("");
+        buyMessage2.setText("");
 
         ObservableList<String> a = FXCollections.observableArrayList();
         ObservableList<String> b = FXCollections.observableArrayList();
@@ -99,45 +109,46 @@ public class BuyerPageController {
             productDescription.setItems(e);
         }
 
-
-
-
-               /* File file = new File(product.getPhoto());
-            String localUrl = file.toURI().toURL().toExternalForm();
-            Image profile = new Image(localUrl, false);
-            productImage.setImage(profile);
-            productImage.setFitHeight(175);
-            productImage.setFitWidth(125);
-            productImage.rotateProperty();
-*/
-
-
         sizeID.getItems().addAll("XS", "S", "M","L","XL");
+
+        }
+
+
+
+
+
+        private void updateGUI() throws MalformedURLException {
+
+            for (Product product : productsRepository.find()){
+
+                if(prod2.equals(product.getProductName())){
+                File file = new File(product.getPhoto());
+               String localUrl = file.toURI().toURL().toExternalForm();
+                Image poza = new Image(localUrl, false);
+               productImage.setImage(poza);
+                productImage.setFitHeight(100);
+                productImage.setFitWidth(150);
+                productImage.rotateProperty();
+
+                }
+            }
     }
 
 
 
+public String prod2;
 
 
-
-  /*  public void showImage() {
-        for (Product product : productsRepository.find())
-        System.out.println("am ajus aici" + product.getPhoto());
-        for (Product product : productsRepository.find()) {
-           // if (product.getPhoto() == null) {
-               // String pathUser = "src/main/resources/Images/lock.png";
-               // File file = new File(pathUser);
-               // String localUrl = file.toURI().toURL().toExternalForm();
-            String path = product.getPhoto();
-                Image poza = new Image(path);
-                productImage.setImage(poza);
-                productImage.setFitHeight(175);
-               // productImage.setFitWidth(125);
-               // productImage.rotateProperty();
+    public void showImage() throws MalformedURLException {
 
 
-        }
-    }*/
+            prod2 = productName.getSelectionModel().getSelectedItem();
+
+            updateGUI();
+
+
+    }
+
 
     public void setOrdersButton(ActionEvent event) throws IOException {
         Stage stageBack = (Stage) ordersButton.getScene().getWindow();
@@ -146,11 +157,12 @@ public class BuyerPageController {
          stageBack.show();
     }
 
-public String nameaux;
+    public String nameaux;
+    public String selleraux;
 
-    public void setBuyButton(ActionEvent event) throws IOException {
+    public void setBuyButton(javafx.event.ActionEvent event) throws IOException {
 
-
+ int ok = 0;
         for (Product product : productsRepository.find()) {
 
             prodName = product.getProductName();
@@ -161,23 +173,35 @@ public String nameaux;
             buyerName = LoginController.getLoggedUsername();
 
 
-
             System.out.println(prodName);
             System.out.println(productID.getText());
-            nameaux=productID.getText();
-            if(prodName.equals(nameaux)){
-
+            nameaux = productID.getText();
+            selleraux = sellerID.getText();
+            if (prodName.equals(nameaux) && prodSeller.equals(selleraux)) {
+               ok=1;
                 buyMessage.setText("Produs achizitionat!");
                 BuyProductService.buyProduct(prodName, prodDescription, prodSize, prodPrice, prodSeller, buyerName);
                 productID.clear();
                 sellerID.clear();
 
-               FXMLLoader Loader = new FXMLLoader();
-               Loader.setLocation(getClass().getClassLoader().getResource("BuyerPage.fxml"));
-        }
+                FXMLLoader Loader = new FXMLLoader();
+                Loader.setLocation(getClass().getClassLoader().getResource("BuyerPage.fxml"));
 
+            }
+
+
+        }
+        if (ok!=1){buyMessage2.setText("Produs/Seller inexistent!");}
 
     }
+
+public void setRefreshButton() throws IOException {
+
+    Stage stageref = (Stage) refreshButton.getScene().getWindow();
+    stageref.setTitle("SHOP");
+    Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("BuyerPage.fxml"));
+    stageref.setScene(new Scene(root, 600, 350));
+    stageref.show();
 }
 }
 

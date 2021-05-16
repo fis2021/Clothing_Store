@@ -42,8 +42,6 @@ public class InboxController {
     private static ObjectRepository<User>userObjectRepository = UserService.getUserRepository();
     public ListView<String> productAddress = new ListView<>();
 
-
-
     private String loggedUser;
 
     @FXML
@@ -71,7 +69,7 @@ public class InboxController {
 
                     productAddress.setItems(f);
 
-              //  if (Objects.equals(loggedUser, product.getbuyedSellerName())) {
+
                 a.add(product.getbuyedProductName());
                 productName.setItems(a);
 
@@ -89,7 +87,7 @@ public class InboxController {
                 productDescription.setItems(e);
 
 
-            }//}
+            }
 
         }
     }

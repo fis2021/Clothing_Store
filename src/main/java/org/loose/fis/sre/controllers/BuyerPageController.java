@@ -21,7 +21,7 @@ import org.loose.fis.sre.services.BuyProductService;
 
 import java.io.IOException;
 
-public class BuyerPageController<pulbic> {
+public class BuyerPageController {
 
 
     private static ObjectRepository<Product> productsRepository = AddProductService.getProductsRepository();

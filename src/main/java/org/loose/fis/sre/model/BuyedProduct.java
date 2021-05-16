@@ -2,7 +2,7 @@ package org.loose.fis.sre.model;
 
 import org.dizitart.no2.objects.Id;
 
-public class Product {
+public class BuyedProduct {
 
     @Id
     private String productName;
@@ -11,20 +11,20 @@ public class Product {
     private String productPrice;
     private String photo;
     private String sellerName;
+    private String buyerName;
 
 
-
-    public Product(String productName, String productDescription, String productSize, String photo, String productPrice,String sellerName) {
+    public BuyedProduct(String productName, String productDescription, String productSize, String productPrice,String sellerName,String buyerName) {
         this.productName = productName;
         this.productDescription = productDescription;
         this.productSize = productSize;
-        this.photo=photo;
+       // this.photo=photo;
         this.productPrice = productPrice;
         this.sellerName=sellerName;
-
+        this.buyerName=buyerName;
     }
 
-    public Product() {
+    public BuyedProduct() {
     }
 
     public String getProductName() {

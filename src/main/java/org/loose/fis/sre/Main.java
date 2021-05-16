@@ -5,8 +5,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import org.loose.fis.sre.model.Product;
 import org.loose.fis.sre.services.AddProductService;
+import org.loose.fis.sre.services.BuyProductService;
 import org.loose.fis.sre.services.FileSystemService;
 import org.loose.fis.sre.services.UserService;
 
@@ -20,6 +20,7 @@ public class Main extends Application {
         initDirectory();
         UserService.initDatabase();
         AddProductService.initDatabase();
+        BuyProductService.initDatabase();
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("WelcomePage.fxml"));
         primaryStage.setTitle("Registration Example");
         primaryStage.setScene(new Scene(root, 600, 350));
